@@ -39,6 +39,10 @@ function FindPictures{
 			$result+=$objectPath
 			if ($CopyPicturesToDirectory -ne '')
 			{
+				if($(Test-Path $CopyPicturesToDirectory) -eq $false)
+				{
+					New-Item -Path $CopyPicturesToDirectory -ItemType Directory
+				}
 				Write-Verbose "Copying picture $item to $CopyPicturesToDirectory"
 				Copy-Item -Path $objectPath -Destination $CopyPicturesToDirectory
 			}
@@ -63,4 +67,4 @@ function Find-Pictures{
 	return $r;
 }
 
-Export-ModuleMember 
+Export-ModuleMember Find-Pictures
