@@ -11,15 +11,24 @@
 </p>
 
  
-# [Title]
-[Header]
+# Find Pictures
+
+Module looks in the directory for jpg files and checks if some of them are pictures.
+
 <!--more-->
 
-[content]
+Module does it by validating if taken date exist for given file. 
+
+Parameters
+- CopyPicturesToDirectory - if any picture will be found it can be copied to chosen directory
+- DeletePictures - if you don't have the pictures you could delete them from the directory. It is working very nice with CopyPicturesToDirectory
+
+### Installing
 
 ````powershell
-[Code]
+Install-Module ProductivityTools.FindPictures
 ````
 
 <!--og-image-->
-![GetOneDriveDirectory](Images/Image.png)
+![](Images/Diagram.png)
+gi

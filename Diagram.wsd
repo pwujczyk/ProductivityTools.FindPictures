@@ -1,0 +1,20 @@
+@startuml
+start
+ :Find all jpg files;
+ repeat
+ if (contains creation date) then (yes)
+ :Photograph;
+ else(no)
+ :Picture;
+    if($CopyPicturesToDirectory not empty) then(yes)
+    :Copy picture to provided directory;
+    else(no)
+    endif;
+        if($DeletePictures switch) then(yes)
+        :Delete items without creation date;
+        else(no)
+        endif;
+ endif;
+ repeat while (all jpg files processed)
+stop
+@enduml
