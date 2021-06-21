@@ -10,10 +10,12 @@ function HasCreationDate {
 	$image = New-Object System.Drawing.Bitmap("$objectPath")
 	try {
 		$date = $image.GetPropertyItem(36867).value[0..9]
+		$image.Dispose();
 		return $true
 	}
 	catch {	
 		Write-Verbose "Date taken haven't been found, probably picture is image (doesn't have the date taken property)[$objectPath]"
+		$image.Dispose();
 		return $false
 	}
 }
@@ -25,7 +27,7 @@ function FindPictures {
 
 	$result = @();
 
-	$items = Get-ChildItem -Path $path -Recurse -Filter *.jpg | select FullName
+	$items = Get-ChildItem -Path $Directory -Recurse -Filter *.jpg | select FullName
 	foreach ($item in $items) {
 
 		$objectPath = $item.FullName

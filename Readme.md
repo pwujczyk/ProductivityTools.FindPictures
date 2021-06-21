@@ -25,10 +25,44 @@ Parameters
 
 ### Installing
 
-````powershell
+```powershell
 Install-Module ProductivityTools.FindPictures
-````
+```
 
 <!--og-image-->
 ![](Images/Diagram.png)
-gi
+
+### Usage
+
+Following command will find pictures in the **D:\\photo** directory
+
+```powershell
+Find-Pictures D:\photo\ -Verbose
+```
+
+![](Images/ExecutionWithoutParameters.png)
+
+
+Following command will find pictures and copy them to the **d:\\pictures** directory
+```powershell
+Find-Pictures D:\photo\ -CopyPicturesToDirectory d:\pictures -Verbose
+```
+
+![](Images/ExecutionWithCopy.png)
+
+Results shows files in the new directory.
+
+![](Images/Result.png)
+
+
+Following command will find pictures copy them to the **d:\\pictures** directory and it will remove pictures from the source of the directory
+
+```powershell
+Find-Pictures D:\photo\ -CopyPicturesToDirectory d:\pictures -Verbose -DeletePictures
+```
+
+![](Images/Delete.png)
+
+After the command in the files we will have:
+
+![](Images/DeleteResult.png)
