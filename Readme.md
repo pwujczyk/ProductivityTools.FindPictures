@@ -17,7 +17,7 @@ Module looks in the directory for jpg files and checks if some of them are pictu
 
 <!--more-->
 
-Module does it by validating if taken date exist for given file. 
+Module does it by validating if taken date exist for given file. It is used by me when I am operating on the photographs and between hundreds of photos some pictures were placed by mistake.
 
 Parameters
 - CopyPicturesToDirectory - if any picture will be found it can be copied to chosen directory
